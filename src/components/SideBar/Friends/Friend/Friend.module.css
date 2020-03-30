@@ -1,0 +1,13 @@
+
+.img {
+    margin: 0 auto;
+    display: block;
+    padding: 4px;
+    border-radius: 100%;
+    width: 45px;
+}
+.item {
+    margin-top: 15px;
+    font-size: 18px;
+    text-align: center;
+}

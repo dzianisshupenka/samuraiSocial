@@ -1,0 +1,12 @@
+button {
+    border-radius: 50%;
+    background-color: rgb(196, 236, 14);
+    font-size: 15px;
+}
+
+textarea {
+    margin: 10px;
+    width: 300px;
+    height: 30px;
+    background-color: rgb(30, 223, 181);
+}

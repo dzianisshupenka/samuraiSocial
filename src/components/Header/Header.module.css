@@ -1,0 +1,12 @@
+
+.header{
+    margin: 5px;
+    grid-area: h;
+    background:linear-gradient(80deg, #00C322, #65E17B);
+    border-radius: 5px;
+    }
+    .header img{
+      margin-top: 33px;
+      margin-left: 35px;
+      width: 500px;
+    }

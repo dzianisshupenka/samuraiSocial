@@ -1,0 +1,14 @@
+.info {
+    padding: 15px;
+}
+
+.img {
+    margin-top: 15px;
+    width: 100%;
+}
+
+
+.avatar {
+    width: 100px;
+    border-radius: 15%;
+}

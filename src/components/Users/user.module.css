@@ -1,0 +1,54 @@
+img {
+    width: 70px;
+    margin-right: 15px;
+    border-radius: 10px;
+}
+.wrap{
+    
+}
+.main{
+    background-color: rgb(8, 182, 37);
+    border-radius: 10px;
+    display: flex;
+    padding: 5px;
+    margin: 10px;
+}
+
+button {
+    width: 70px;
+    border-radius: 5px;
+}
+
+.info {
+    font-size: 20px;
+    width: 500px;
+
+}
+
+.pages{
+    width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.page{
+    padding: 5px;
+}
+
+.selected {
+    font-weight: bold;
+    background-color: rgb(26, 105, 11);
+    border-radius: 30%;
+}
+
+.info div {
+    margin-bottom: 25px;
+}
+
+.location {
+    font-size: 20px;
+}
+
+.location div {
+    margin-bottom: 25px;
+}

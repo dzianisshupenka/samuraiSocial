@@ -1,0 +1,23 @@
+.bar{
+    margin: 5px;
+    padding: 10px;
+    grid-area: n;
+    background-color: #38E156;
+    border-radius: 5px;
+    
+    }
+    
+.bar a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+.bar a.active {
+    color: gold;
+}
+.bar .friends {  
+    font-size: 30px;
+}
+.friend{
+    margin-top: 30px;
+}
