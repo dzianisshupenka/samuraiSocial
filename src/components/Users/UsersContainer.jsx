@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Users from './User';
 import * as axios from 'axios';
-import { toogleIsFetchingAC, followAC, unfollowAC, setUsersAC, setCurrentPageAC, setTotalUsersCountAC } from '../../redux/usersReducer';
+import { toogleIsFetching, follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount } from '../../redux/usersReducer';
 import Preloader from '../common/Preloader';
 
 class UsersCc extends React.Component {
@@ -13,7 +13,7 @@ class UsersCc extends React.Component {
         .get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
         .then(response => {
           this.props.toogleIsFetching(false);
-          this.props.setUser(response.data.items);
+          this.props.setUsers(response.data.items);
           this.props.setTotalUsersCount(response.data.totalCount);
         });
   }
@@ -24,7 +24,7 @@ class UsersCc extends React.Component {
         .get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
         .then(response => {
           this.props.toogleIsFetching(false);
-          this.props.setUser(response.data.items);
+          this.props.setUsers(response.data.items);
         });
   }
 
@@ -53,28 +53,35 @@ let mapStateToProps = state => {
   };
 };
 
-let mapDispatchToProps = dispatch => {
-  return {
-    follow: userId => {
-      dispatch(followAC(userId));
-    },
-    unfollow: userId => {
-      dispatch(unfollowAC(userId));
-    },
-    setUser: users => {
-      dispatch(setUsersAC(users));
-    },
-    setCurrentPage: currentPage => {
-      dispatch(setCurrentPageAC(currentPage));
-    },
-    setTotalUsersCount: totalCount => {
-      dispatch(setTotalUsersCountAC(totalCount));
-    },
-    toogleIsFetching: isFetching => {
-      dispatch(toogleIsFetchingAC(isFetching));
-    }
-  };
-};
-const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(UsersCc) ;
+// let mapDispatchToProps = dispatch => {
+//   return {
+//     follow: userId => {
+//       dispatch(followAC(userId));
+//     },
+//     unfollow: userId => {
+//       dispatch(unfollowAC(userId));
+//     },
+//     setUser: users => {
+//       dispatch(setUsersAC(users));
+//     },
+//     setCurrentPage: currentPage => {
+//       dispatch(setCurrentPageAC(currentPage));
+//     },
+//     setTotalUsersCount: totalCount => {
+//       dispatch(setTotalUsersCountAC(totalCount));
+//     },
+//     toogleIsFetching: isFetching => {
+//       dispatch(toogleIsFetchingAC(isFetching));
+//     }
+//   };
+// };
+const UsersContainer = connect(mapStateToProps, {
+  follow,
+  unfollow,
+  setUsers,
+  setCurrentPage,
+  setTotalUsersCount,
+  toogleIsFetching
+})(UsersCc) ;
 
 export default UsersContainer
