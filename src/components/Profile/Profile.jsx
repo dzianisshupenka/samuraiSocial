@@ -3,18 +3,15 @@ import profile from'./Profile.module.css';
 import ProfileInfo from './MyPosts/ProfileInfo/ProfileInfo';
 import NewPostContainer from './MyPosts/NewPostsContainer';
 
-
-
-
-
-const Content = () => {
-  
+const Profile = (props) => {
     return(
+      
     <div className={profile.content}>
-      <ProfileInfo />
+
+      <ProfileInfo userProfile={props.userProfile}/>
       <NewPostContainer />
       
   </div>)
 }
 
-export default Content;
+export default Profile;
