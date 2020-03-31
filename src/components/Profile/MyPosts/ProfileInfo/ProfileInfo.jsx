@@ -13,7 +13,19 @@ const ProfileInfo = (props) => {
             </div>
             <div className={profile.info}>
                 <div><img className={profile.avatar} src={props.userProfile.photos.small}/></div>
-                description
+                <div className={profile.margin}>
+                    <span className={profile.field}>
+                        My name is: 
+                    </span>  
+                    {props.userProfile.fullName} 
+                </div>
+                <div className={profile.margin}>
+                    <span className={profile.field}>
+                        I think i: 
+                    </span>  
+                    {props.userProfile.aboutMe}
+                </div>
+                <span className={`${profile.margin} ${profile.field}`}>{props.userProfile.lookingForAJob ? "I want to work hard" : "I don't want to work"}</span>
             </div>
         </div>
     
