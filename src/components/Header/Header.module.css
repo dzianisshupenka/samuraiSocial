@@ -1,12 +1,26 @@
 
 .header{
-    margin: 5px;
-    grid-area: h;
-    background:linear-gradient(80deg, #00C322, #65E17B);
-    border-radius: 5px;
-    }
-    .header img{
-      margin-top: 33px;
-      margin-left: 35px;
-      width: 500px;
-    }
+  
+  margin: 5px;
+  grid-area: h;
+  background:linear-gradient(80deg, #00C322, #65E17B);
+  border-radius: 5px;
+}
+.header img{
+  display: inline-block;
+  margin-top: 33px;
+  margin-left: 35px;
+  width: 500px;
+}
+.login{
+  margin: 50px;
+  float: right;
+  font-size: 25px;
+  
+}
+
+.login a {
+  
+  text-decoration: none;
+  
+}
