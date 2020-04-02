@@ -43,7 +43,7 @@ const usersReducer = (state = initialState, action) => {
             return{...state, 
                 followingProgres: action.followingProgres 
                 ? [...state.followingProgres, action.userId]
-                : state.followingProgres.filter(id => id != action.userId)}
+                : state.followingProgres.filter(id => id !== action.userId)}
         default:
             return state;
         

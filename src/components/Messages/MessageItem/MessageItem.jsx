@@ -6,7 +6,7 @@ const MessageItem = (props) => {
     let path = '/messages/' + props.id;
     return (
         <div className={message.item}>
-            <img className={message.img} src='https://images-na.ssl-images-amazon.com/images/I/31nxvlzm90L._SY450_.jpg'/>
+            <img className={message.img} alt='avatar' src='https://images-na.ssl-images-amazon.com/images/I/31nxvlzm90L._SY450_.jpg'/>
             
             <NavLink to={path}>{props.name}</NavLink>
         </div>

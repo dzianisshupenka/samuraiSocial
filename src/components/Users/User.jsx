@@ -34,7 +34,7 @@ const Users = (props) => {
                       props.toogleFollowingProgress(true, u.id);
                       followApi.unfollowUser(u.id)
                             .then(data => {
-                              if(data.resultCode == 0) {
+                              if(data.resultCode === 0) {
                                 props.unfollow(u.id);
                               }
                             props.toogleFollowingProgress(false, u.id);
@@ -43,7 +43,7 @@ const Users = (props) => {
                       <button disabled={props.followingProgres.some(id => id === u.id)} onClick={() => {
                       props.toogleFollowingProgress(true, u.id);
                       followApi.followUser(u.id).then(data => {
-                              if(data.resultCode == 0) {
+                              if(data.resultCode === 0) {
                                 props.follow(u.id);
                               }
                               props.toogleFollowingProgress(false, u.id);
