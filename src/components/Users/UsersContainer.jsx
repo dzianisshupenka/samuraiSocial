@@ -1,27 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Users from './User';
-import { toogleFollowingProgress, toogleIsFetching, follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount } from '../../redux/usersReducer';
+import { getUsersThunk, followThunk, unfollowThunk } from '../../redux/usersReducer';
 import Preloader from '../common/Preloader';
-import { getUsers } from '../../api/api';
 
 class UsersCc extends React.Component {
 
   componentDidMount() {
-    this.props.toogleIsFetching(true);
-      getUsers(this.props.currentPage, this.props.pageSize).then(data => {
-                this.props.toogleIsFetching(false);
-                this.props.setUsers(data.items);
-                this.props.setTotalUsersCount(data.totalCount);
-              });
+
+    this.props.getUsersThunk(this.props.currentPage, this.props.pageSize);
         }
   onPageChanged = (pageNumber) => {
-    this.props.setCurrentPage(pageNumber);
-    this.props.toogleIsFetching(true);
-    getUsers(pageNumber, this.props.pageSize).then(data => {
-          this.props.toogleIsFetching(false);
-          this.props.setUsers(data.items);
-        });
+    this.props.getUsersThunk(pageNumber, this.props.pageSize);
   }
 
   render() {
@@ -32,10 +22,10 @@ class UsersCc extends React.Component {
                     currentPage ={this.props.currentPage}
                     onPageChanged={this.onPageChanged}
                     users={this.props.users}
-                    unfollow={this.props.unfollow}
-                    follow={this.props.follow} 
-                    toogleFollowingProgress={this.props.toogleFollowingProgress}
+                    unfollow={this.props.unfollowThunk}
+                    follow={this.props.followThunk} 
                     followingProgres={this.props.followingProgres}
+
                     />
             </>
   }
@@ -52,36 +42,10 @@ let mapStateToProps = state => {
   };
 };
 
-// let mapDispatchToProps = dispatch => {
-//   return {
-//     follow: userId => {
-//       dispatch(followAC(userId));
-//     },
-//     unfollow: userId => {
-//       dispatch(unfollowAC(userId));
-//     },
-//     setUser: users => {
-//       dispatch(setUsersAC(users));
-//     },
-//     setCurrentPage: currentPage => {
-//       dispatch(setCurrentPageAC(currentPage));
-//     },
-//     setTotalUsersCount: totalCount => {
-//       dispatch(setTotalUsersCountAC(totalCount));
-//     },
-//     toogleIsFetching: isFetching => {
-//       dispatch(toogleIsFetchingAC(isFetching));
-//     }
-//   };
-// };
 const UsersContainer = connect(mapStateToProps, {
-  follow,
-  unfollow,
-  setUsers,
-  setCurrentPage,
-  setTotalUsersCount,
-  toogleIsFetching,
-  toogleFollowingProgress
+  getUsersThunk,
+  followThunk,
+  unfollowThunk
 })(UsersCc) ;
 
 export default UsersContainer
