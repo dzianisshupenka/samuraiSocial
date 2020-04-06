@@ -2,7 +2,6 @@ import React from 'react';
 import message from './Messages.module.css';
 import MessageItem from './MessageItem/MessageItem';
 import Message from './Message/Message';
-import { Redirect } from 'react-router-dom';
 
 
 const Messages = (props) => {
@@ -23,8 +22,6 @@ const Messages = (props) => {
 
     let messageMap = props.messagePage.messageData.map(message => 
     <Message message={message.message} class={message.class} />)
-
-    if(!props.auth) return <Redirect to={'/login'} />
 
     return(
         <div className={message.dialogs}>         

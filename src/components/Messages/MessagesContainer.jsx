@@ -1,33 +1,12 @@
 import { sendMessageActionCreator, updateNewMessageActionCreator } from '../../redux/dialogReducer';
 import Messages from './Messages';
 import { connect } from 'react-redux';
-
-
-// const MessagesContainer = () => {
-//     return(
-//         <StoreContext.Consumer>
-//             {
-//                (store) => {
-//                    let sendMessage = () => {
-//                         store.dispatch(sendMessageActionCreator())
-//                     }
-
-//                     let onMessageChange = (text) => {
-//                         store.dispatch(updateNewMessageActionCreator(text))
-//                     }
-//                    return <Messages onSendMessage={sendMessage} 
-//                              onMessageChange={onMessageChange} 
-//                              messagePage={store.getState().messagePage} />
-//                } 
-//             }
-//         </StoreContext.Consumer>       
-//     )
-// }
+import { WithAuthRedirect } from '../../hoc/WithAuthRedirect';
+import { compose } from 'redux';
 
 let mapStateToProps = (state) => {
     return {
-        messagePage: state.messagePage,
-        auth: state.auth.isAuth
+        messagePage: state.messagePage
     }
 }
 
@@ -38,6 +17,7 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-const MessagesContainer = connect(mapStateToProps, mapDispatchToProps)(Messages);
-
-export default MessagesContainer;
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    WithAuthRedirect
+)(Messages)

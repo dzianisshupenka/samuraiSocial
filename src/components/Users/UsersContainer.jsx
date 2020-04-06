@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import Users from './User';
 import { getUsersThunk, followThunk, unfollowThunk } from '../../redux/usersReducer';
 import Preloader from '../common/Preloader';
+import { WithAuthRedirect } from '../../hoc/WithAuthRedirect';
+import { compose } from 'redux';
 
 class UsersCc extends React.Component {
 
@@ -42,10 +44,7 @@ let mapStateToProps = state => {
   };
 };
 
-const UsersContainer = connect(mapStateToProps, {
-  getUsersThunk,
-  followThunk,
-  unfollowThunk
-})(UsersCc) ;
-
-export default UsersContainer
+export default compose(
+  connect(mapStateToProps, {getUsersThunk, followThunk, unfollowThunk }),
+  WithAuthRedirect
+)(UsersCc)
