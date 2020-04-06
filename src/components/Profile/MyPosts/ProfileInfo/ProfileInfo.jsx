@@ -2,6 +2,7 @@ import React from 'react';
 import profile from './ProfileInfo.module.css';
 import Preloader from '../../../common/Preloader';
 import photoNull from '../../../../img/31nxvlzm90L._SY450_.jpg';
+import ProfileStatus from './ProfileStatus';
 
 const ProfileInfo = (props) => {
     if(!props.userProfile) {
@@ -9,11 +10,13 @@ const ProfileInfo = (props) => {
     }
     return(
         <div>
-            <div>
+            {/* <div>
                 <img className={profile.img} alt='head' src='http://demo.themefreesia.com/arise/wp-content/uploads/sites/2/2015/11/cropped-header-img.png'/>
-            </div>
+            </div> */}
             <div className={profile.info}>
-                <div><img alt='avatar' className={profile.avatar} src={props.userProfile.photos.small===null ? photoNull : props.userProfile.photos.small}/></div>
+                <div><img alt='avatar' className={profile.avatar} 
+                src={props.userProfile.photos.small===null ? photoNull : props.userProfile.photos.small}/></div>
+                <ProfileStatus status="this is my status"/>
                 <div className={profile.margin}>
                     <span className={profile.field}>
                         My name is: 
