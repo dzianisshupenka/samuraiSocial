@@ -16,7 +16,7 @@ const ProfileInfo = (props) => {
             <div className={profile.info}>
                 <div><img alt='avatar' className={profile.avatar} 
                 src={props.userProfile.photos.small===null ? photoNull : props.userProfile.photos.small}/></div>
-                <ProfileStatus status="this is my status"/>
+                <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
                 <div className={profile.margin}>
                     <span className={profile.field}>
                         My name is: 
@@ -34,6 +34,7 @@ const ProfileInfo = (props) => {
         </div>
     
     )
+    
 }
 
 export default ProfileInfo;

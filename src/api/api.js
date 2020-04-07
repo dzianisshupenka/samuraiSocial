@@ -22,7 +22,7 @@ export const setAuth = () => {
         return response.data;
     });
 }
-console.log(setAuth())
+
 
 export const getUsers = (currentPage = 1, pageSize = 50) => {
     return instance.get(`users?page=${currentPage}&count=${pageSize}`)
@@ -30,6 +30,17 @@ export const getUsers = (currentPage = 1, pageSize = 50) => {
                     return response.data;
                 })
 }
+
+export const userStatus = {
+    getUserStatus(userId) {
+        return instance.get(`profile/status/` + userId)
+        
+    },
+    updateUserStatus(status) {
+        return instance.put(`profile/status/`, { status: status })
+    }
+}
+
 const followApi = {
     unfollowUser(userId) {
         return instance.delete(`follow/${userId}`)
@@ -44,17 +55,5 @@ const followApi = {
                     })
     }
 }
-// const unfollowUser = (userId) => {
-//     return instance.delete(`follow/${userId}`)
-//                 .then(response => {
-//                     return response.data;
-//                 })
-// }
 
-// export const followUser = (userId) => {
-//     return instance.post(`follow/${userId}`)
-//                 .then(response => {
-//                     return response.data;
-//                 })
-// }
  export default followApi;
