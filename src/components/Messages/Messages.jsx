@@ -2,21 +2,15 @@ import React from 'react';
 import message from './Messages.module.css';
 import MessageItem from './MessageItem/MessageItem';
 import Message from './Message/Message';
+import MessageFormRedux from './MessageForm';
 
 
 const Messages = (props) => {
     
-    let newMessage = React.createRef();
-
-    let sendMessage = () => {
-        props.onSendMessage();
+    const onSubmit = (formData) => {
+        props.sendMessage(formData.messageItem)
     }
-
-    let onMessageChange = () => {
-        let text = newMessage.current.value;
-        props.onMessageChange(text);
-    }
-
+ 
     let dialog = props.messagePage.messageItemData.map(dialog => 
     <MessageItem name={dialog.name} id={dialog.id} />)
 
@@ -30,8 +24,7 @@ const Messages = (props) => {
             </div>
             <div className={message.messages}>
             {messageMap}
-            <textarea onChange={onMessageChange} ref={newMessage} className={message.text} value={props.messagePage.newMessageText} />
-            <button onClick={sendMessage} className={message.btn}>Send message</button>
+            <MessageFormRedux onSubmit={onSubmit}/>
             </div>
             
         </div>
