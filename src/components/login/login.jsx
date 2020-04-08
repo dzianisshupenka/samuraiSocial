@@ -1,5 +1,7 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
+import { Input } from '../common/controls/FormControl';
+import { required, maxLengthCreator } from '../../utils/validators/validator';
 
 let loginStyle = {
     backgroundColor: "rgba(256, 256, 256, 0.5)",
@@ -11,17 +13,19 @@ let buttonStyle = {
     margin: "5px"
 }
 
+const maxLength = maxLengthCreator(15);
+
 const LoginForm = (props) => {
     return(
         <form onSubmit={props.handleSubmit}>
             <div >
-                <Field component={'input'} name={'login'} style = {loginStyle} placeholder={'login'}/>
+                <Field component={Input} validate={[required, maxLength]} name={'login'} style = {loginStyle} placeholder={'login'}/>
             </div>
             <div>
-                <Field component={'input'} name={'password'} style = {loginStyle} placeholder={'password'}/>
+                <Field component={Input} validate={[required, maxLength]} name={'password'} style = {loginStyle} placeholder={'password'}/>
             </div>
             <div>
-                <Field component={'input'} name={'rememberMe'} type={'checkbox'}/>
+                <Field component={Input} name={'rememberMe'} type={'checkbox'}/>
             </div>
             <div>
                 <button style = {buttonStyle}>Login</button>
