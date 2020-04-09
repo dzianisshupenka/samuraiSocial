@@ -2,6 +2,9 @@ import React from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { Input } from '../common/controls/FormControl';
 import { required, maxLengthCreator } from '../../utils/validators/validator';
+import { connect } from 'react-redux';
+import { loginThunk } from './../../redux/authReducer';
+import { Redirect } from 'react-router-dom';
 
 let loginStyle = {
     backgroundColor: "rgba(256, 256, 256, 0.5)",
@@ -13,7 +16,7 @@ let buttonStyle = {
     margin: "5px"
 }
 
-const maxLength = maxLengthCreator(15);
+const maxLength = maxLengthCreator(25);
 
 const LoginForm = (props) => {
     return(
@@ -42,7 +45,11 @@ const LoginReduxForm = reduxForm({
 const Login = (props) => {
 
     const onSubmit =  (formData) => {
-        console.log(formData);      
+        props.loginThunk(formData.login, formData.password, formData.rememberMe);      
+    }
+
+    if(props.isAuth)  {
+        return <Redirect to='/profile' />
     }
     
     return <div>
@@ -51,4 +58,6 @@ const Login = (props) => {
     </div>
 }
 
-export default Login;
+const mapStateToProps = (state) => ({isAuth : state.auth.isAuth})
+
+export default connect(mapStateToProps, {loginThunk})(Login);
