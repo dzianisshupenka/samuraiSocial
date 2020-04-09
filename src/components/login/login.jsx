@@ -5,6 +5,7 @@ import { required, maxLengthCreator } from '../../utils/validators/validator';
 import { connect } from 'react-redux';
 import { loginThunk } from './../../redux/authReducer';
 import { Redirect } from 'react-router-dom';
+import style from './../../components/common/controls/FormControl.module.css';
 
 let loginStyle = {
     backgroundColor: "rgba(256, 256, 256, 0.5)",
@@ -30,6 +31,9 @@ const LoginForm = (props) => {
             <div>
                 <Field component={Input} name={'rememberMe'} type={'checkbox'}/>
             </div>
+            {props.error && <div className={style.commonError}>
+                {props.error}
+            </div>}
             <div>
                 <button style = {buttonStyle}>Login</button>
             </div>

@@ -1,4 +1,5 @@
 import { setAuth } from "../api/api";
+import { stopSubmit } from "redux-form";
 
 
 const SET_USER_DATA = 'SET_USER_DATA';
@@ -38,10 +39,14 @@ export const setAuthThunk = () => {return (dispatch) => {
 }
 
 export const loginThunk = (email, password, rememberMe) => (dispatch) => {
+   
     setAuth.login(email, password, rememberMe)
     .then(response => {
         if(response.data.resultCode === 0) {
             dispatch(setAuthThunk());
+        } else {
+            let message = response.data.messages[0];
+            dispatch(stopSubmit('login', {_error: message}));
         }
     });
 }
