@@ -5,6 +5,7 @@ import { getUsersThunk, followThunk, unfollowThunk } from '../../redux/usersRedu
 import Preloader from '../common/Preloader';
 import { WithAuthRedirect } from '../../hoc/WithAuthRedirect';
 import { compose } from 'redux';
+import { getUsers, getPageSize, getTotalUsersCount, getCurrentPage, getIsFetching, getFollowingProgress } from '../../redux/usersSelectors';
 
 class UsersCc extends React.Component {
 
@@ -35,12 +36,12 @@ class UsersCc extends React.Component {
 
 let mapStateToProps = state => {
   return {
-    users: state.usersPage.users,
-    pageSize: state.usersPage.pageSize,
-    totalUsersCount: state.usersPage.totalUsersCount,
-    currentPage: state.usersPage.currentPage,
-    isFetching: state.usersPage.isFetching,
-    followingProgres: state.usersPage.followingProgres
+    users: getUsers(state),
+    pageSize: getPageSize(state),
+    totalUsersCount: getTotalUsersCount(state),
+    currentPage: getCurrentPage(state),
+    isFetching: getIsFetching(state),
+    followingProgres: getFollowingProgress(state)
   };
 };
 
