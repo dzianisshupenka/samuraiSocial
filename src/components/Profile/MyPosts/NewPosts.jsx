@@ -2,8 +2,7 @@ import React from 'react';
 import profile from'./../Profile.module.css';
 import NewPostFormRedux from './NewPostForm';
 
-const NewPost = (props) => {
-  
+const NewPost = props => {
   let onSubmit = (formData) => {
     props.addPost(formData.newPostItem)
   }
