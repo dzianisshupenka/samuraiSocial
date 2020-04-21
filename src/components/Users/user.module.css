@@ -7,7 +7,7 @@ img {
     
 }
 .main{
-    background-color: rgb(8, 182, 37);
+    background-color: rgb(105, 180, 158);
     border-radius: 10px;
     display: flex;
     padding: 5px;
@@ -37,7 +37,7 @@ button {
 
 .selected {
     font-weight: bold;
-    background-color: rgb(26, 105, 11);
+    background-color: rgb(11, 105, 97);
     border-radius: 30%;
 }
 
