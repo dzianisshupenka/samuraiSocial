@@ -1,0 +1,15 @@
+.pages{
+    width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.page{
+    padding: 5px;
+}
+
+.selected {
+    font-weight: bold;
+    background-color: rgb(11, 105, 97);
+    border-radius: 30%;
+}
