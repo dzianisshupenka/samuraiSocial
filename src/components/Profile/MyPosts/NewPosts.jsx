@@ -4,7 +4,8 @@ import NewPostFormRedux from './NewPostForm';
 
 const NewPost = props => {
   let onSubmit = (formData) => {
-    props.addPost(formData.newPostItem)
+    props.addPost(formData.newPostItem);
+    formData.newPostItem = '';
   }
 
     return(

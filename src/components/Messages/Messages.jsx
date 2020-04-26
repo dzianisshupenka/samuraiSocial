@@ -8,7 +8,8 @@ import MessageFormRedux from './MessageForm';
 const Messages = (props) => {
     
     const onSubmit = (formData) => {
-        props.sendMessage(formData.messageItem)
+        props.sendMessage(formData.messageItem);
+        formData.messageItem = '';
     }
  
     let dialog = props.messagePage.messageItemData.map(dialog => 
