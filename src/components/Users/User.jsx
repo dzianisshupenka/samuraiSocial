@@ -9,7 +9,7 @@ const Users = (props) => {
 
         return (
           <div className={style.wrap}>
-            <Paginator totalUsersCount={props.totalUsersCount} 
+            <Paginator totalItemsCount={props.totalUsersCount} 
                        pageSize={props.pageSize} 
                        onPageChanged={props.onPageChanged}  
                        currentPage={props.currentPage}/>
