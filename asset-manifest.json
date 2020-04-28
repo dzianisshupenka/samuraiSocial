@@ -1,33 +1,33 @@
 {
   "files": {
     "main.css": "/samuraiSocial/static/css/main.f409183d.chunk.css",
-    "main.js": "/samuraiSocial/static/js/main.0d695aac.chunk.js",
-    "main.js.map": "/samuraiSocial/static/js/main.0d695aac.chunk.js.map",
-    "runtime-main.js": "/samuraiSocial/static/js/runtime-main.564fa76d.js",
-    "runtime-main.js.map": "/samuraiSocial/static/js/runtime-main.564fa76d.js.map",
-    "static/js/2.2c295a5f.chunk.js": "/samuraiSocial/static/js/2.2c295a5f.chunk.js",
-    "static/js/2.2c295a5f.chunk.js.map": "/samuraiSocial/static/js/2.2c295a5f.chunk.js.map",
+    "main.js": "/samuraiSocial/static/js/main.ab73319f.chunk.js",
+    "main.js.map": "/samuraiSocial/static/js/main.ab73319f.chunk.js.map",
+    "runtime-main.js": "/samuraiSocial/static/js/runtime-main.4affe38d.js",
+    "runtime-main.js.map": "/samuraiSocial/static/js/runtime-main.4affe38d.js.map",
+    "static/js/2.e553652e.chunk.js": "/samuraiSocial/static/js/2.e553652e.chunk.js",
+    "static/js/2.e553652e.chunk.js.map": "/samuraiSocial/static/js/2.e553652e.chunk.js.map",
     "static/css/3.03235744.chunk.css": "/samuraiSocial/static/css/3.03235744.chunk.css",
     "static/js/3.7948c059.chunk.js": "/samuraiSocial/static/js/3.7948c059.chunk.js",
     "static/js/3.7948c059.chunk.js.map": "/samuraiSocial/static/js/3.7948c059.chunk.js.map",
     "static/css/4.de52e3d2.chunk.css": "/samuraiSocial/static/css/4.de52e3d2.chunk.css",
-    "static/js/4.0c9e2e79.chunk.js": "/samuraiSocial/static/js/4.0c9e2e79.chunk.js",
-    "static/js/4.0c9e2e79.chunk.js.map": "/samuraiSocial/static/js/4.0c9e2e79.chunk.js.map",
+    "static/js/4.0c42fa5f.chunk.js": "/samuraiSocial/static/js/4.0c42fa5f.chunk.js",
+    "static/js/4.0c42fa5f.chunk.js.map": "/samuraiSocial/static/js/4.0c42fa5f.chunk.js.map",
     "index.html": "/samuraiSocial/index.html",
-    "precache-manifest.05214e140a2f050f10ec834085790717.js": "/samuraiSocial/precache-manifest.05214e140a2f050f10ec834085790717.js",
+    "precache-manifest.ed0d857ddd22f094ec4fed030108fcf8.js": "/samuraiSocial/precache-manifest.ed0d857ddd22f094ec4fed030108fcf8.js",
     "service-worker.js": "/samuraiSocial/service-worker.js",
     "static/css/3.03235744.chunk.css.map": "/samuraiSocial/static/css/3.03235744.chunk.css.map",
     "static/css/4.de52e3d2.chunk.css.map": "/samuraiSocial/static/css/4.de52e3d2.chunk.css.map",
     "static/css/main.f409183d.chunk.css.map": "/samuraiSocial/static/css/main.f409183d.chunk.css.map",
-    "static/js/2.2c295a5f.chunk.js.LICENSE.txt": "/samuraiSocial/static/js/2.2c295a5f.chunk.js.LICENSE.txt",
+    "static/js/2.e553652e.chunk.js.LICENSE.txt": "/samuraiSocial/static/js/2.e553652e.chunk.js.LICENSE.txt",
     "static/media/31nxvlzm90L._SY450_.jpg": "/samuraiSocial/static/media/31nxvlzm90L._SY450_.76fdbddc.jpg",
     "static/media/Spinner-1.4s-137px.svg": "/samuraiSocial/static/media/Spinner-1.4s-137px.d1736f9b.svg",
     "static/media/draniki.png": "/samuraiSocial/static/media/draniki.ae7f2558.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.564fa76d.js",
-    "static/js/2.2c295a5f.chunk.js",
+    "static/js/runtime-main.4affe38d.js",
+    "static/js/2.e553652e.chunk.js",
     "static/css/main.f409183d.chunk.css",
-    "static/js/main.0d695aac.chunk.js"
+    "static/js/main.ab73319f.chunk.js"
   ]
 }
