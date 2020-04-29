@@ -47,6 +47,14 @@ export const userStatus = {
     },
     updateUserStatus(status) {
         return instance.put(`profile/status/`, { status: status })
+    },
+    uploadProfilePhoto(photo) {
+        const formData = new FormData();
+        formData.append('image', photo)
+        return instance.put('profile/photo/', formData, {
+            headers: {
+             'content-type': 'multipart/form-data'
+            }})
     }
 }
 
