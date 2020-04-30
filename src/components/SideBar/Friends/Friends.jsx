@@ -12,6 +12,9 @@ const Friends = () => {
                 <Friend />
                 <Friend />
                 <Friend />
+                <Friend />
+                <Friend />
+                <Friend />
             </div>
         </div>
     )
