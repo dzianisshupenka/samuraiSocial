@@ -55,6 +55,9 @@ export const userStatus = {
             headers: {
              'content-type': 'multipart/form-data'
             }})
+    },
+    saveProfileData(profile) {
+        return instance.put(`profile`, profile)
     }
 }
 
