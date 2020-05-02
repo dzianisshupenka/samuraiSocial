@@ -33,7 +33,7 @@ const LoginForm = (props) => {
             {props.captchaUrl && <img style={captchaStyle} alt='captcha' src={props.captchaUrl}/>}
             {props.captchaUrl && createField(Input, [required], 'captcha', null, 'enter your captcha')}
             <div>
-                <button style = {profile.editButton}>Login</button>
+                <button className={profile.editButton}>Login</button>
             </div>
         </form>
     )
