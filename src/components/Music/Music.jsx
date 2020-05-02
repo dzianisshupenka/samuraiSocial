@@ -4,7 +4,7 @@ import music from './Music.module.css';
 const Music = () => {
     return(
         <div className={music.text}>
-            Music
+            Warning - this is a page in progress.
         </div>
     )
 }

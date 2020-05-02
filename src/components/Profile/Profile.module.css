@@ -2,3 +2,8 @@
 .posts {
     margin-left: 15px;
 }
+
+.loader {
+    display: flex;
+    justify-content: center;
+}

@@ -25,14 +25,13 @@
 .messages{
     padding: 15px;
     display: grid;
-    background-color: rgb(219, 203, 203, 0.5);
     
 }
 .message {
     width: 200px;
-    background-color: rgba(86, 90, 69, 0.5);
+    background-color: rgba(25, 171, 197, 0.281);
     margin: 5px;
-    color: rgb(252, 252, 252);
+    color: rgb(16, 9, 119);
     font-size: 20px;
 }
 
@@ -40,7 +39,6 @@
     width: 285px;
     height: 40px;
     border: none;
-    background-color: rgb(121, 215, 238);
 }
 
 .btn{ 

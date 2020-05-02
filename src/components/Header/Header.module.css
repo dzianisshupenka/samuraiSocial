@@ -3,7 +3,7 @@
   
   margin: 5px;
   grid-area: h;
-  background:linear-gradient(80deg, #00AF64, #36D792);
+  background:rgb(226, 244, 255);
   border-radius: 5px;
 }
 .header img{

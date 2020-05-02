@@ -5,7 +5,7 @@ img {
 }
 
 .main{
-    background-color: rgb(105, 180, 158);
+    background-color: rgba(121, 200, 253, 0.445);
     border-radius: 10px;
     display: flex;
     padding: 5px;

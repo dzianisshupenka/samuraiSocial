@@ -38,8 +38,8 @@ const Users = (props) => {
                   <div>{u.status != null ? u.status : u.id}</div>
                 </div>
                 <div className={style.location}>
-                  <div>'u.location.city'</div>
-                  <div>'u.location.country'</div>
+                  <div>City: Unknown</div>
+                  <div>Country: somewhere near</div>
                 </div>
               </div>
             ))}
