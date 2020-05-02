@@ -24,8 +24,8 @@ const maxLength = maxLengthCreator(25);
 const LoginForm = (props) => {
     return(
         <form onSubmit={props.handleSubmit}>
-            {createField(Input, [required, maxLength], 'login', loginStyle, 'login')}
-            {createField(Input, [required, maxLength], 'password', loginStyle, 'password')}
+            {createField(Input, [required, maxLength], 'login', loginStyle, 'e-mail')}
+            {createField(Input, [required, maxLength], 'password', loginStyle, 'password', {type:"password"})}
             {createField(Input, null, 'rememberMe', null, null, {type: "checkbox"}, 'remember me')}
             {props.error && <div className={style.commonError}>
                 {props.error}
@@ -56,6 +56,7 @@ const Login = (props) => {
     
     return <div>
         <h1>Please, log in</h1>
+        Use e-mail: free@samuraijs.com, Password: 'free' for test account
         <LoginReduxForm captchaUrl={props.captchaUrl} onSubmit={onSubmit}/>
     </div>
 }
