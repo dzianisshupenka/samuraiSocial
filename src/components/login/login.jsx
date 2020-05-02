@@ -17,6 +17,10 @@ let buttonStyle = {
     margin: "5px"
 }
 
+let captchaStyle = {
+    width: "150px"
+}
+
 const maxLength = maxLengthCreator(25);
 
 const LoginForm = (props) => {
@@ -28,6 +32,8 @@ const LoginForm = (props) => {
             {props.error && <div className={style.commonError}>
                 {props.error}
             </div>}
+            {props.captchaUrl && <img style={captchaStyle} alt='captcha' src={props.captchaUrl}/>}
+            {props.captchaUrl && createField(Input, [required], 'captcha', null, 'enter your captcha')}
             <div>
                 <button style = {buttonStyle}>Login</button>
             </div>
@@ -43,7 +49,7 @@ const LoginReduxForm = reduxForm({
 const Login = (props) => {
 
     const onSubmit =  (formData) => {
-        props.loginThunk(formData.login, formData.password, formData.rememberMe);      
+        props.loginThunk(formData.login, formData.password, formData.rememberMe, formData.captcha);      
     }
 
     if(props.isAuth)  {
@@ -52,10 +58,11 @@ const Login = (props) => {
     
     return <div>
         <h1>Please, log in</h1>
-        <LoginReduxForm onSubmit={onSubmit}/>
+        <LoginReduxForm captchaUrl={props.captchaUrl} onSubmit={onSubmit}/>
     </div>
 }
 
-const mapStateToProps = (state) => ({isAuth : state.auth.isAuth})
+const mapStateToProps = (state) => ({isAuth : state.auth.isAuth,
+                                     captchaUrl: state.auth.captchaUrl})
 
 export default connect(mapStateToProps, {loginThunk})(Login);
