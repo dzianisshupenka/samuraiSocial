@@ -13,10 +13,10 @@ const Messages = (props) => {
     }
  
     let dialog = props.messagePage.messageItemData.map(dialog => 
-    <MessageItem name={dialog.name} id={dialog.id} />)
+    <MessageItem key={dialog.id} name={dialog.name} id={dialog.id} />)
 
     let messageMap = props.messagePage.messageData.map(message => 
-    <Message message={message.message} class={message.class} />)
+    <Message key={message.id} message={message.message} class={message.class} />)
 
     return(
         <div className={message.dialogs}>         

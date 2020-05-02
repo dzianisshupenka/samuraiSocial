@@ -21,7 +21,11 @@
 
 .logout {
   display: block;
-  margin-left: auto;
+  margin-left: 165px;
+  width: 150px;
+  background-color: rgb(11, 185, 238);
+  border: none;
+  color: #000;
 }
 
 .login a {

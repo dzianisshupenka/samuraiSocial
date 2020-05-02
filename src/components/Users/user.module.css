@@ -12,8 +12,10 @@ img {
     margin: 10px;
 }
 
-button {
+.buttonFollow {
+    background-color: rgb(11, 185, 238);
     width: 70px;
+    border: none;
     border-radius: 5px;
 }
 

@@ -6,14 +6,12 @@ import { connect } from 'react-redux';
 import { loginThunk } from './../../redux/authReducer';
 import { Redirect } from 'react-router-dom';
 import style from './../../components/common/controls/FormControl.module.css';
+import profile from './../Profile/MyPosts/ProfileInfo/ProfileInfo.module.css';
+
 
 let loginStyle = {
     backgroundColor: "rgba(256, 256, 256, 0.5)",
     width: "250px",
-    margin: "5px"
-}
-
-let buttonStyle = {
     margin: "5px"
 }
 
@@ -35,7 +33,7 @@ const LoginForm = (props) => {
             {props.captchaUrl && <img style={captchaStyle} alt='captcha' src={props.captchaUrl}/>}
             {props.captchaUrl && createField(Input, [required], 'captcha', null, 'enter your captcha')}
             <div>
-                <button style = {buttonStyle}>Login</button>
+                <button style = {profile.editButton}>Login</button>
             </div>
         </form>
     )
